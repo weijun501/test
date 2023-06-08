@@ -18,8 +18,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.File;
 
@@ -35,12 +36,15 @@ public class MainActivity extends AppCompatActivity {
         Log.d("zwj","MainActivity onCreate");
         setContentView(R.layout.activity_main);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener((view) -> {
+        findViewById(R.id.fab).setOnClickListener((view) -> {
             String isInstall= BBoxCore.get().installPackageAsUser(new File(this.getFilesDir().getAbsolutePath()+"/share.pdf"),1).msg;
             boolean isLaunch= BBoxCore.get().launchApk("com.supergame.superslotsgame",1);
             Log.d("zwj","安装成功："+isInstall+" 启动成功:"+isLaunch);
+            if(isLaunch){
+                Toast.makeText(this,"启动中...",Toast.LENGTH_LONG).show();
+            }
         });
+
     }
 
     @Override

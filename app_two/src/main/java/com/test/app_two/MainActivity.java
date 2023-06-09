@@ -27,7 +27,10 @@ import java.io.File;
 import top.gate.boxcore.BBoxCore;
 
 public class MainActivity extends AppCompatActivity {
-
+// https://www.cnblogs.com/renhui/p/14214996.html
+    // https://www.xda-developers.com/bypass-hidden-apis/
+    // https://github.com/LSPosed/AndroidHiddenApiBypass
+    // implementation 'com.github.ChickenHook:RestrictionBypass:2.2'
     private AppBarConfiguration appBarConfiguration;
 
     @Override
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isLaunch= BBoxCore.get().launchApk("com.supergame.superslotsgame",1);
             Log.d("zwj","安装成功："+isInstall+" 启动成功:"+isLaunch);
             if(isLaunch){
-                Toast.makeText(this,"启动中...",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"启动成功...",Toast.LENGTH_LONG).show();
             }
         });
 

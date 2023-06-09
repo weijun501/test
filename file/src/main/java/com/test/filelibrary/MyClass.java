@@ -29,7 +29,7 @@ public class MyClass {
 
     public static void splitFile() throws IOException {
 
-        File sourceFile = new File("D:\\coreApk\\slotsHaworld-release.apk");
+        File sourceFile = new File("D:\\coreApk\\release.apk");
         String chunkFileFolder = "D:\\coreApk\\chunks";
         int chunkFileSize = 2 * 2048 * 2048;
         int chunkFileNum = (int) Math.ceil(sourceFile.length() * 1.0 / chunkFileSize);

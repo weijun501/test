@@ -49,10 +49,10 @@ public class AbiUtils {
                 String name = zipEntry.getName();
                 if (name.startsWith("lib/arm64-v8a")) {
                     mLibs.add("arm64-v8a");
-                } else if (name.startsWith("lib/armeabi")) {
-                    mLibs.add("armeabi");
-                } else if (name.startsWith("lib/armeabi-v7a")) {
+                } else if (name.startsWith("lib/armeabi-v7a")
+                        || name.startsWith("lib/armeabi")) {
                     mLibs.add("armeabi-v7a");
+                    mLibs.add("armeabi");
                 }
             }
         } catch (Exception e) {

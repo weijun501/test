@@ -44,7 +44,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
 
 //    implementation 'me.weishu:free_reflection:3.0.1'
-    implementation 'com.github.tiann:FreeReflection:3.1.0'
+//    implementation 'com.github.tiann:FreeReflection:3.1.0'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
     implementation project(':xposed')
     implementation 'com.swift.sandhook:hooklib:4.2.0'
 //

@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             boolean isLaunch= BBoxCore.get().launchApk("com.supergame.superslotsgame",1);
             Log.d("zwj","安装成功："+isInstall+" 启动成功:"+isLaunch);
             if(isLaunch){
-                Toast.makeText(this,"启动成功...",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"启动成功...1",Toast.LENGTH_LONG).show();
             }
         });
 

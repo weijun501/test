@@ -43,7 +43,7 @@ import java.util.List;
 import java.util.Map;
 
 
-import me.weishu.reflection.Reflection;
+//import me.weishu.reflection.Reflection;
 import mirror.android.app.ActivityThread;
 import top.gate.boxcore.client.frameworks.BStorageManager;
 import top.gate.boxcore.client.hook.delegate.ContentProviderDelegate;
@@ -116,7 +116,8 @@ public class BBoxCore extends ClientConfiguration {
                 }
             };
         }
-        Reflection.unseal(context);
+//        Reflection.unseal(context);
+        org.lsposed.hiddenapibypass.HiddenApiBypass.addHiddenApiExemptions("");
         sContext = context;
         String processName = getProcessName(getContext());
         if (processName.equals(BBoxCore.getHostPkg())) {

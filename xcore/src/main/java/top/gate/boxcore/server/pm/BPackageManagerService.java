@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Binder;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.io.File;
 import java.io.InputStream;
@@ -649,7 +650,7 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 return result.installError("parser apk error.");
             }
             result.packageName = aPackage.packageName;
-
+            Log.e("zwj", "installPackageAsUserLocked: " + aPackage.mSharedUserId );
             BPackageSettings bPackageSettings = mSettings.getPackageLPw(aPackage.packageName, aPackage);
             bPackageSettings.installOption = option;
 

@@ -51,6 +51,8 @@ import top.gate.boxcore.server.ServiceManager;
 
 import static top.gate.boxcore.BEnvironment.JUNIT_JAR;
 
+import org.lsposed.hiddenapibypass.HiddenApiBypass;
+
 /**
  * * ∧＿∧
  * (`･ω･∥
@@ -117,7 +119,9 @@ public class BBoxCore extends ClientConfiguration {
             };
         }
 //        Reflection.unseal(context);
-        org.lsposed.hiddenapibypass.HiddenApiBypass.addHiddenApiExemptions("");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            HiddenApiBypass.addHiddenApiExemptions("");
+        }
         sContext = context;
         String processName = getProcessName(getContext());
         if (processName.equals(BBoxCore.getHostPkg())) {
@@ -136,15 +140,15 @@ public class BBoxCore extends ClientConfiguration {
             }
 //            android.os.Debug.waitForDebugger();
         }
-        if (isServerProcess()) {
-            Intent intent = new Intent();
-            intent.setClass(getContext(), DaemonService.class);
-            if (BuildCompat.isOreo()) {
-                getContext().startForegroundService(intent);
-            } else {
-                getContext().startService(intent);
-            }
-        }
+//        if (isServerProcess()) {
+//            Intent intent = new Intent();
+//            intent.setClass(getContext(), DaemonService.class);
+//            if (BuildCompat.isOreo()) {
+//                getContext().startForegroundService(intent);
+//            } else {
+//                getContext().startService(intent);
+//            }
+//        }
             HookManager.get().init();
     }
 
